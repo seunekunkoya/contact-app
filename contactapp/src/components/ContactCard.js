@@ -8,7 +8,7 @@ const ContactCard = (props) => {
       <img src={user} alt="user" className="ui avatar image" />
       <div className="content">
         <div className="header"> {name} </div>
-        <div> {email} </div>
+          <div> {email} </div>
       </div>
       <i
         className="trash alternate outline icon"
