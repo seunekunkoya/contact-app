@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import user from "../images/user.png";
 
 const ContactCard = (props) => {
@@ -7,8 +8,10 @@ const ContactCard = (props) => {
     <div className="item">
       <img src={user} alt="user" className="ui avatar image" />
       <div className="content">
-        <div className="header"> {name} </div>
+        <Link to={`/contact/${id}`}>
+          <div className="header"> {name} </div>
           <div> {email} </div>
+        </Link>
       </div>
       <i
         className="trash alternate outline icon"

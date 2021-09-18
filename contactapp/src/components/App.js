@@ -38,13 +38,29 @@ function App() {
     <div className="ui container">
       <Router>
         <Header />
-        
-            <Route path="/" exact component={ContactList} />
-            <Route path="/add" exact component={AddContact} />
-      
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <ContactList
+                {...props}
+                contacts={contacts}
+                getContactId={removeContactHandler}
+              />
+            )}
+          />
+          <Route
+            path="/add"
+            exact
+            render={(props) => (
+              <AddContact {...props} addContactHandler={addContactHandler} />
+            )}
+          />
+        </Switch>
       </Router>
       {/* <AddContact addContactHandler={addContactHandler} />
-            <ContactList contacts={contacts} getContactId={removeContactHandler} /> */ }
+            <ContactList contacts={contacts} getContactId={removeContactHandler} /> */}
     </div>
   );
 }
